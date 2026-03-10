@@ -137,6 +137,70 @@
             color: #1a365d;
         }
 
+        /* 결과 도표 (그래프) 스타일 추가 */
+        .result-chart {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .chart-title {
+            margin-top: 0;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        .chart-item {
+            margin-bottom: 1.5rem;
+        }
+        .chart-item:last-child {
+            margin-bottom: 0;
+        }
+        .chart-label {
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .bar-label {
+            width: 70px;
+            font-size: 0.85rem;
+            color: #4a5568;
+            font-weight: bold;
+        }
+        .bar-track {
+            flex-grow: 1;
+            background-color: #edf2f7;
+            border-radius: 4px;
+            height: 28px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .bar-fill.before {
+            background-color: #a0aec0; /* 회색 (이전) */
+        }
+        .bar-fill.after {
+            background-color: #38a169; /* 초록색 (이후, 긍정적 변화 강조) */
+        }
+
         /* 문자 보내기 버튼 스타일 */
         .apply-btn {
             display: inline-block;
@@ -237,7 +301,7 @@
         <h2 class="section-title">지난 세미나 유튜브</h2>
         
         <a href="https://www.youtube.com/watch?v=FOb-Tcw7Pfs" target="_blank" class="youtube-btn">
-            ▶ <span class="highlight-word">진화론</span>의 심각성 시청하기
+            ▶ <span class="highlight-word">진화론</span>과 <span class="highlight-word">유신진화론</span>의 심각성 시청하기
             <span class="subtitle">(클릭하면 유튜브로 이동합니다)</span>
         </a>
 
@@ -245,6 +309,39 @@
             ▶ 알파세미나 결과 및 후기 시청하기
             <span class="subtitle">(클릭하면 유튜브로 이동합니다)</span>
         </a>
+
+        <!-- 성과 시각화 도표 -->
+        <div class="result-chart">
+            <h3 class="chart-title">📈 세미나 참석자 인식 변화</h3>
+            
+            <div class="chart-item">
+                <div class="chart-label">✔️ 성경을 확신하게 된 사람</div>
+                <div class="bar-group">
+                    <div class="bar-row">
+                        <span class="bar-label">세미나 전</span>
+                        <div class="bar-track"><div class="bar-fill before" style="width: 50%;">17명</div></div>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">세미나 후</span>
+                        <div class="bar-track"><div class="bar-fill after" style="width: 100%;">34명</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-item">
+                <div class="chart-label">✔️ 성경을 증명할 수도 있겠다는 사람</div>
+                <div class="bar-group">
+                    <div class="bar-row">
+                        <span class="bar-label">세미나 전</span>
+                        <div class="bar-track"><div class="bar-fill before" style="width: 5.2%;">1명</div></div>
+                    </div>
+                    <div class="bar-row">
+                        <span class="bar-label">세미나 후</span>
+                        <div class="bar-track"><div class="bar-fill after" style="width: 100%;">19명</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="contact">
