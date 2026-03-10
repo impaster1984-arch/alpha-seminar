@@ -128,4 +128,132 @@
         }
         .youtube-btn span {
             font-size: 0.9rem;
-            font-weight: normal
+            font-weight: normal;
+            display: block;
+            margin-top: 0.3rem;
+            opacity: 0.8;
+            color: #1a365d;
+        }
+
+        /* 문자 보내기 버튼 스타일 */
+        .apply-btn {
+            display: inline-block;
+            background-color: #38a169; /* 초록색 */
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin-top: 1.5rem;
+            transition: background-color 0.3s;
+        }
+        .apply-btn:hover { background-color: #2f855a; }
+
+        .contact {
+            text-align: center;
+            padding: 3rem 2rem;
+            background-color: #2c5282;
+            color: white;
+        }
+        .contact h2 { margin-top: 0; }
+        .contact .phone {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #ecc94b;
+        }
+        .contact .notice {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        /* 강조할 단어 스타일 */
+        .highlight-word {
+            color: #ff0000;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.8rem; }
+            .header p { font-size: 1rem; }
+            .section { padding: 1.5rem; }
+            .youtube-btn { font-size: 1.1rem; }
+            .apply-btn { width: 80%; box-sizing: border-box; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1>&lt;알파세미나 안내&gt;</h1>
+        <p>빅뱅이론과 <span class="highlight-word">진화론</span>의 오류와 조작을 밝히고,<br>성경 창세기를 과학적으로 입증하는 세미나</p>
+    </header>
+
+    <section class="section">
+        <h2 class="section-title">대상</h2>
+        <ul class="target-list">
+            <li><strong>1.</strong> 하나님에 대해 확신이 없는 사람</li>
+            <li><strong>2.</strong> 이성적이고 과학적인 증거를 찾는 사람</li>
+            <li><strong>3.</strong> 청소년들을 가르치거나 전도하고 싶은 사람</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">필요성</h2>
+        <div class="text-content">
+            <p><span class="highlight-word">진화론</span>을 믿는 사람은 점점 더 늘어나고, 반대로 성경을 믿는 사람들은 줄어드는 시대입니다.</p>
+            <p>하나님에 대해 확신이 없는 청소년과 성도들에게 확신을 주고, 믿지 않는 불신자들을 전도하려면 먼저 <strong>과학적인 증거들을 통해 이성적인 확신</strong>이 있어야 합니다.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">강사</h2>
+        <div class="speaker-info">
+            <h3>정은일 목사</h3>
+            <ul>
+                <li>더행복해지는교회 담임목사 (기독교대한성결교회)</li>
+                <li>서울신대 신학과, 고려대 경제학과, 서강대 언론대학원</li>
+                <li>신의 발자국(쿰란), 최고의 선물(쿰란), 친절한 계시록(쿰란)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">일시 및 장소</h2>
+        <div class="info-box">
+            <p>📅 <strong>일시:</strong> 3월 28일(토) 오후 1 - 3시</p>
+            <p>📍 <strong>장소:</strong> 이디야카페(서울신대점) 지하 비전홀</p>
+            <p>💰 <strong>참가비:</strong> 전액 무료 <span class="free-badge">무료</span></p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">지난 세미나 유튜브</h2>
+        
+        <a href="https://www.youtube.com/watch?v=FOb-Tcw7Pfs" target="_blank" class="youtube-btn">
+            ▶ <span class="highlight-word">진화론</span>의 심각성 시청하기
+            <span>(클릭하면 유튜브로 이동합니다)</span>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=91GtMUh7LWU" target="_blank" class="youtube-btn">
+            ▶ 알파세미나 결과 및 후기 시청하기
+            <span>(클릭하면 유튜브로 이동합니다)</span>
+        </a>
+    </section>
+
+    <section class="contact">
+        <h2>문의 및 신청</h2>
+        <div class="phone">010-2794-1984</div>
+        <p>정은일 목사</p>
+        <p class="notice">(아래 버튼을 누르시면 바로 문자를 보내실 수 있습니다)</p>
+        
+        <a href="sms:01027941984" class="apply-btn">문자로 참가 신청하기</a>
+    </section>
+</div>
+
+</body>
+</html>
