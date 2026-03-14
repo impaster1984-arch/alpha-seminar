@@ -33,9 +33,10 @@
         }
         .header p {
             margin: 0;
-            font-size: 1.1rem;
-            font-weight: 300;
-            opacity: 0.9;
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.5;
         }
         .section {
             padding: 2rem;
@@ -62,6 +63,7 @@
             padding: 1rem;
             border-radius: 5px;
             border-left: 3px solid #3182ce;
+            font-weight: bold; /* 글씨를 전체적으로 진하게 만듭니다 */
         }
         .text-content p {
             margin-bottom: 1rem;
@@ -95,16 +97,29 @@
             margin: 0.5rem 0;
             font-size: 1.1rem;
         }
-        .free-badge {
-            display: inline-block;
-            background-color: #e53e3e;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.9rem;
+        
+        /* 정보 박스 콜론(:) 정렬용 스타일 간격 세밀 조정 */
+        .info-row {
+            display: flex;
+            margin: 0.8rem 0;
+            font-size: 1.1rem;
+            align-items: flex-start;
+        }
+        .info-label {
+            width: 85px; /* '💰 참가비' 길이에 딱 맞게 조절 */
+            flex-shrink: 0;
+        }
+        .info-colon {
+            width: 15px;
+            text-align: center;
             font-weight: bold;
-            margin-left: 5px;
-            vertical-align: middle;
+            flex-shrink: 0;
+            margin: 0 5px; /* 콜론 양옆으로 일정한 여백 추가 */
+        }
+        .info-value {
+            flex-grow: 1;
+            padding-left: 5px; /* 글씨 시작 전 여백 추가 */
+            line-height: 1.6;
         }
         
         /* 유튜브 버튼 스타일 (옅은 파란색) */
@@ -201,6 +216,20 @@
             background-color: #38a169; /* 초록색 (이후, 긍정적 변화 강조) */
         }
 
+        /* 무료 세미나 안내 박스 스타일 */
+        .free-seminar-notice {
+            margin-top: 1.5rem;
+            text-align: center;
+            background-color: #fff5f5;
+            border: 2px dashed #fc8181;
+            padding: 1.2rem;
+            border-radius: 8px;
+            color: #c53030;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
         /* 문자 보내기 버튼 스타일 */
         .apply-btn {
             display: inline-block;
@@ -242,9 +271,70 @@
             font-weight: bold;
         }
         
+        /* 파란색 강조 스타일 */
+        .highlight-blue {
+            color: #0056b3;
+            font-weight: bold;
+        }
+        
+        /* 썸네일 링크 스타일 */
+        .video-thumbnail-link {
+            display: block;
+            max-width: 560px;
+            margin: 0 auto;
+            text-decoration: none;
+            color: inherit;
+        }
+        .thumbnail-wrapper {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 2px solid #fc8181;
+        }
+        .thumbnail-wrapper img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .video-thumbnail-link:hover .thumbnail-wrapper img {
+            transform: scale(1.02);
+        }
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 40px;
+            background-color: rgba(255, 0, 0, 0.9);
+            border-radius: 10px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+        .video-thumbnail-link:hover .play-button {
+            background-color: red;
+        }
+        .thumbnail-text {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .thumbnail-text .subtitle {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: #4a5568;
+            margin-top: 0.3rem;
+            display: block;
+        }
+        
         @media (max-width: 600px) {
             .header h1 { font-size: 1.8rem; }
-            .header p { font-size: 1rem; }
+            .header p { font-size: 1.2rem; }
             .section { padding: 1.5rem; }
             .youtube-btn { font-size: 1.1rem; }
             .apply-btn { width: 80%; box-sizing: border-box; }
@@ -291,49 +381,72 @@
     <section class="section">
         <h2 class="section-title">일시 및 장소</h2>
         <div class="info-box">
-            <p>📅 <strong>일시:</strong> 3월 28일(토) 오후 1 - 3시</p>
-            <p>📍 <strong>장소:</strong> 이디야카페(서울신대점) 지하 비전홀</p>
-            <p>💰 <strong>참가비:</strong> 전액 무료 <span class="free-badge">무료</span></p>
+            <div class="info-row">
+                <div class="info-label">📅 <strong>일시</strong></div>
+                <div class="info-colon">:</div>
+                <div class="info-value">3월 28일(토) 오후 1 - 3시</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">📍 <strong>장소</strong></div>
+                <div class="info-colon">:</div>
+                <div class="info-value">이디야카페(서울신대점) 지하<br>
+                <span style="color: #4a5568; font-weight: bold;">(더행복해지는교회 비전홀)</span></div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">💰 <strong>참가비</strong></div>
+                <div class="info-colon">:</div>
+                <div class="info-value">전액 무료</div>
+            </div>
         </div>
     </section>
 
     <section class="section">
-        <h2 class="section-title">지난 세미나 유튜브</h2>
+        <h2 class="section-title">관련영상보기</h2>
         
-        <a href="https://www.youtube.com/watch?v=FOb-Tcw7Pfs" target="_blank" class="youtube-btn">
-            ▶ <span class="highlight-word">진화론</span>과 <span class="highlight-word">유신진화론</span>의 심각성 시청하기
-            <span class="subtitle">(클릭하면 유튜브로 이동합니다)</span>
+        <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: 0.8rem; color: #2d3748;">1. <span style="color: #ff0000;">진화론</span>과 <span style="color: #ff6600;">유신진화론</span>의 심각성</h3>
+        <a href="https://www.youtube.com/watch?v=FOb-Tcw7Pfs" target="_blank" class="video-thumbnail-link" style="margin-bottom: 2.5rem;">
+            <div class="thumbnail-wrapper">
+                <img src="https://img.youtube.com/vi/FOb-Tcw7Pfs/hqdefault.jpg" alt="진화론과 유신진화론의 심각성 썸네일">
+                <div class="play-button">▶</div>
+            </div>
         </a>
 
-        <a href="https://www.youtube.com/watch?v=91GtMUh7LWU" target="_blank" class="youtube-btn">
-            ▶ 알파세미나 결과 및 후기 시청하기
-            <span class="subtitle">(클릭하면 유튜브로 이동합니다)</span>
+        <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: 0.8rem; color: #2d3748;">2. 지난 세미나 결과 및 후기</h3>
+        <a href="https://www.youtube.com/watch?v=91GtMUh7LWU" target="_blank" class="video-thumbnail-link" style="margin-bottom: 2rem;">
+            <div class="thumbnail-wrapper">
+                <img src="https://img.youtube.com/vi/91GtMUh7LWU/hqdefault.jpg" alt="알파세미나 결과 및 후기 썸네일">
+                <div class="play-button">▶</div>
+            </div>
         </a>
 
         <!-- 성과 시각화 도표 -->
         <div class="result-chart">
             <h3 class="chart-title">📈 세미나 참석자 인식 변화</h3>
+            <p style="text-align:center; font-size: 0.95rem; color: #4a5568; margin-top: -10px; margin-bottom: 1.5rem; word-break: keep-all; line-height: 1.5;">
+                성경에 대해 확신을 갖게 된 사람이 9명에서 26명으로 <strong>17명 늘었고</strong>,<br>
+                성경이 사실이라고 증명할 수 있다는 사람이 1명에서 19명으로 <strong>늘었습니다.</strong>
+            </p>
             
             <div class="chart-item">
-                <div class="chart-label">✔️ 성경을 확신하게 된 사람</div>
+                <div class="chart-label">✔️ 성경에 대해 확신을 갖게 된 사람</div>
                 <div class="bar-group">
                     <div class="bar-row">
                         <span class="bar-label">세미나 전</span>
-                        <div class="bar-track"><div class="bar-fill before" style="width: 50%;">17명</div></div>
+                        <div class="bar-track"><div class="bar-fill before" style="width: 35%;">9명</div></div>
                     </div>
                     <div class="bar-row">
                         <span class="bar-label">세미나 후</span>
-                        <div class="bar-track"><div class="bar-fill after" style="width: 100%;">34명</div></div>
+                        <div class="bar-track"><div class="bar-fill after" style="width: 100%;">26명</div></div>
                     </div>
                 </div>
             </div>
 
             <div class="chart-item">
-                <div class="chart-label">✔️ 성경을 증명할 수도 있겠다는 사람</div>
+                <div class="chart-label">✔️ 성경이 사실이라고 증명할 수 있다는 사람</div>
                 <div class="bar-group">
                     <div class="bar-row">
                         <span class="bar-label">세미나 전</span>
-                        <div class="bar-track"><div class="bar-fill before" style="width: 5.2%;">1명</div></div>
+                        <div class="bar-track"><div class="bar-fill before" style="width: 5%;">1명</div></div>
                     </div>
                     <div class="bar-row">
                         <span class="bar-label">세미나 후</span>
@@ -342,6 +455,30 @@
                 </div>
             </div>
         </div>
+        
+        <!-- 추가된 무료 강의 안내 문구 -->
+        <div class="free-seminar-notice" style="line-height: 1.5;">
+            📢 학생회나 청년부 등 교회에서 세미나를 신청하시면,<br>무료로 가서 강의해 드립니다.
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #fffaf0;">
+        <h2 class="section-title" style="border-left-color: #ed8936; color: #dd6b20; line-height: 1.4;">
+            사전 시청 영상 
+            <span style="display: block; font-size: 1.05rem; color: #e53e3e; font-weight: normal; letter-spacing: -0.5px; word-break: keep-all; margin-top: 0.4rem;">(강의를 듣기 전에 먼저 시청하고 오세요)</span>
+        </h2>
+        
+        <a href="https://www.youtube.com/watch?v=xAyVZWP6im4" target="_blank" class="video-thumbnail-link">
+            <div class="thumbnail-wrapper">
+                <!-- 유튜브 썸네일 자동 불러오기 주소 -->
+                <img src="https://img.youtube.com/vi/xAyVZWP6im4/hqdefault.jpg" alt="풀리지 않는 지구의 미스터리들 썸네일">
+                <div class="play-button">▶</div>
+            </div>
+            <div class="thumbnail-text">
+                <span class="highlight-word">"풀리지 않는 지구의 미스터리들"</span>
+                <span class="subtitle">(사진을 클릭하면 유튜브 영상이 재생됩니다)</span>
+            </div>
+        </a>
     </section>
 
     <section class="contact">
